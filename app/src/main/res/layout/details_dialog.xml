@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/viewDiaTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Details"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/vSongArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Artist"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/mSongTitle"
+        android:layout_alignStart="@+id/mSongTitle"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/vSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Title"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/viewDiaTitle"
+        android:layout_alignStart="@+id/viewDiaTitle"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/mSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Title"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/vSongTitle"
+        android:layout_alignStart="@+id/vSongTitle"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/mSongArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Artist"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/vSongArtist"
+        android:layout_alignStart="@+id/vSongArtist"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/vAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/mSongArtist"
+        android:layout_alignStart="@+id/mSongArtist"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/mAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/vAlbum"
+        android:layout_alignStart="@+id/vAlbum"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/vDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/mAlbum"
+        android:layout_alignStart="@+id/mAlbum"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/mDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/vDuration"
+        android:layout_alignStart="@+id/vDuration"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/vFolderLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Folder Location"
+        android:textSize="14sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/mDuration"
+        android:layout_alignStart="@+id/mDuration"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/mFolderLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Folder Location"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/vFolderLocation"
+        android:layout_alignStart="@+id/vFolderLocation"
+        android:layout_marginTop="2dp" />
+
+</RelativeLayout>

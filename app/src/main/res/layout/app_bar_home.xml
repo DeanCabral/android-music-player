@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleGravity="center_vertical"
+            app:scrimAnimationDuration="100"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:padding="0dp">
+
+            <RelativeLayout
+                android:id="@+id/allSongsRecyclerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/allSongsRecyclerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Music Library"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/allSongsRecyclerLabel"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Nothing Found!"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/allSongsRecyclerLabel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="VIEW ALL"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:onClick="onClickLibrary"
+                    android:clickable="true"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/all_songs_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/allSongsRecyclerLabel"
+                    android:padding="5dp"
+                    android:onClick="onClickLibrary"
+                    android:clickable="true"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/allSongsRecyclerContainer"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#565656" />
+
+            <RelativeLayout
+                android:id="@+id/artistsRecyclerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allSongsRecyclerContainer"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/artistRecyclerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Browse Artists"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/artistRecyclerLabel"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Nothing Found!"
+                    android:textColor="#888"
+                    android:textSize="13dp"
+                    android:visibility="invisible" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/artistRecyclerLabel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="VIEW ALL"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:onClick="onClickArtists"
+                    android:clickable="true"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/artist_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/artistRecyclerLabel"
+                    android:padding="5dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/artistsRecyclerContainer"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#565656" />
+
+            <RelativeLayout
+                android:id="@+id/albumsRecyclerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/artistsRecyclerContainer"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/albumsRecyclerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Browse Albums"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/albumsRecyclerLabel"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Nothing Found!"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/albumsRecyclerLabel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="VIEW ALL"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:onClick="onClickAlbums"
+                    android:clickable="true"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/albums_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/albumsRecyclerLabel"
+                    android:padding="5dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/albumsRecyclerContainer"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#565656" />
+
+            <RelativeLayout
+                android:id="@+id/bannerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/albumsRecyclerContainer"
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:layout_width="0px"
+                            android:layout_height="fill_parent"
+                            android:background="@null"
+                            android:textColor="@color/colorAccent"
+                            android:layout_weight="1"
+                            android:text="Recents"
+                            android:clickable="true"
+                            android:onClick="onClickRecents"/>
+
+                        <Button
+                            android:layout_width="0px"
+                            android:layout_height="fill_parent"
+                            android:background="@null"
+                            android:textColor="@color/colorAccent"
+                            android:layout_weight="1"
+                            android:text="Playlists"
+                            android:clickable="true"
+                            android:onClick="onClickPlaylists"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:layout_width="0px"
+                            android:layout_height="fill_parent"
+                            android:background="@null"
+                            android:textColor="@color/colorAccent"
+                            android:layout_weight="1"
+                            android:text="Equalizer"
+                            android:clickable="true"
+                            android:onClick="onClickEqualizer"/>
+
+                        <Button
+                            android:layout_width="0px"
+                            android:layout_height="fill_parent"
+                            android:background="@null"
+                            android:textColor="@color/colorAccent"
+                            android:layout_weight="1"
+                            android:text="Search"
+                            android:clickable="true"
+                            android:onClick="onClickSearch"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/version_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/bannerContainer"
+                android:gravity="center"
+                android:text="Cryotech Music v0.1"
+                android:textAlignment="gravity"
+                android:textColor="#888" />
+
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_below="@+id/version_text"
+                android:background="#111111" />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:onClick="onClickPlayer"
+        android:layout_gravity="bottom">
+
+        <ImageButton
+            android:id="@+id/imb"
+            android:background="@android:color/transparent"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitCenter"
+            android:clickable="false" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/selected_track_title"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:textColor="@color/colorAccent"
+                android:singleLine="true"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:layout_marginStart="2dip"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/selected_track_artist"
+                    android:layout_width="200dp"
+                    android:layout_height="18dp"
+                    android:textColor="#ffffff"
+                    android:singleLine="true"
+                    android:layout_marginTop="2dp"
+                    android:textSize="12sp"
+                    android:layout_marginStart="2dip" />
+
+                <TextView
+                    android:id="@+id/selected_track_duration"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:textColor="#ffffff"
+                    android:singleLine="true"
+                    android:layout_marginTop="2dp"
+                    android:textSize="12sp"
+                    android:layout_marginStart="2dip"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+    android:id="@+id/fragContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:translationZ="5dp" />
+
+</android.support.design.widget.CoordinatorLayout>
+

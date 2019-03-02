@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".EqualizerActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        app:layout_collapseMode="pin"
+        app:layout_scrollFlags="scroll|enterAlways" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:padding="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarEq"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-6dp"
+                android:layout_marginTop="10dp"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:id="@+id/eqLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Music Equalizer"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/eqSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/eqLabel"
+                    android:layout_marginEnd="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_below="@+id/toolbarEq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/visualizer_display"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Visualizer"
+                        android:textAlignment="gravity"
+                        android:textColor="#888" />
+
+                    <View
+                        android:id="@+id/visualizerBG"
+                        android:layout_below="@id/visualizer_display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <com.stealth.stealthmusic.Utils.VisualizerView
+                        android:id="@+id/visualizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/visualizer_display"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignBottom="@+id/visualizerBG" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/eq_display"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Equalizer"
+                        android:textAlignment="gravity"
+                        android:textColor="#888" />
+
+                    <LinearLayout
+                        android:layout_below="@id/eq_display"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--Band 1-->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp">
+
+
+                            <TextView
+                                android:id="@+id/eq_freq_title1"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="25dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="Frequency"
+                                android:layout_marginStart="10dp"
+                                android:paddingStart="2dp"
+                                android:gravity="center" />
+
+                            <SeekBar
+                                android:id="@+id/band_1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorDarkGrey"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="18dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="15 db" />
+                        </LinearLayout>
+
+                        <!--Band 2-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/eq_freq_title2"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="25dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="Frequency"
+                                android:layout_marginStart="10dp"
+                                android:paddingStart="2dp"
+                                android:gravity="center" />
+
+                            <SeekBar
+                                android:id="@+id/band_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorDarkGrey"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="18dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="15 db" />
+                        </LinearLayout>
+
+                        <!--Band 3-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/eq_freq_title3"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="25dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="Frequency"
+                                android:layout_marginStart="10dp"
+                                android:paddingStart="2dp"
+                                android:gravity="center" />
+
+                            <SeekBar
+                                android:id="@+id/band_3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorDarkGrey"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="18dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="15 db" />
+                        </LinearLayout>
+
+                        <!--Band 4-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/eq_freq_title4"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="25dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="Frequency"
+                                android:layout_marginStart="10dp"
+                                android:paddingStart="2dp"
+                                android:gravity="center" />
+
+                            <SeekBar
+                                android:id="@+id/band_4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorDarkGrey"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="18dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="15 db" />
+                        </LinearLayout>
+
+                        <!--Band 5-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/eq_freq_title5"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="25dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="Frequency"
+                                android:layout_marginStart="10dp"
+                                android:paddingStart="2dp"
+                                android:gravity="center" />
+
+                            <SeekBar
+                                android:id="@+id/band_5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorDarkGrey"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="18dp"
+                                android:singleLine="true"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:text="15 db" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="Reverb"
+                        android:textAlignment="gravity"
+                        android:textColor="#888" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/hScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:scrollbarSize="2dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/reverb_btn_none"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="None"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_sr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Small Room"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_mr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Medium Room"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_lr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Large Room"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_mh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Medium Hall"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_lh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Large Hall"/>
+
+                            <Button
+                                android:id="@+id/reverb_btn_plate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:background="@drawable/list_selector"
+                                android:textSize="12sp"
+                                android:text="Plate"/>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

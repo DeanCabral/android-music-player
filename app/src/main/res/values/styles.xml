@@ -1,0 +1,87 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:editTextColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorGrey</item>
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="android:textColorHighlight">@color/colorGrey</item>
+        <item name="panelBackground">@color/colorPrimary</item>
+        <item name="panelMenuListTheme">@style/Theme.MenuTheme.CompactMenu</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorSwitchThumbNormal">@color/colorGrey</item>
+        <item name="android:colorForeground">@color/colorGrey</item>
+        <item name="android:scrollbarSize">20dp</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme.MenuTheme.CompactMenu" parent="@style/Theme.AppCompat.CompactMenu">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:itemTextAppearance">
+            @style/TextAppearance.MenuTheme.Material.CompactMenu
+        </item>
+    </style>
+
+    <style name="TextAppearance.MenuTheme.Material.CompactMenu" parent="@android:style/TextAppearance.Medium">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@null</item>
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorGrey</item>
+        <item name="android:colorPressedHighlight">@color/colorPrimary</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="PreferencesTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="preferenceTheme">@style/PreferencesTheme</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorSwitchThumbNormal">@color/colorGrey</item>
+        <item name="android:colorForeground">@color/colorGrey</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorGrey</item>
+    </style>
+
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+</resources>
+
+

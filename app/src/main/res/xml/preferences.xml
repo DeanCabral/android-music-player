@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Settings And Customisation">
+
+        <SwitchPreference
+            android:key="headphoneState"
+            android:title="Headphones State"
+            android:summary="Automatically Pause or Resume music player when headphones are plugged/unplugged"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="albumArtDisplay"
+            android:title="Display Album Art"
+            android:summary="Enable or Disable album art from being displayed in the Albums tab of the Music Library"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="fadeEffect"
+            android:title="Fade Effect"
+            android:summary="Creates a slow fade effect on your device's volume as a music playback transition between songs"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="notifDisplay"
+            android:title="Notification Display"
+            android:summary="Choose to enable or disable the MediaPlayer notification on music playback"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="shakeSkip"
+            android:title="Shake To Skip"
+            android:summary="Shake your device to skip to the next song automatically (compatible devices only)"
+            android:defaultValue="false"/>
+
+        <SwitchPreference
+            android:key="duplicateMembers"
+            android:title="Duplicate Members"
+            android:summary="Allow or disallow the use of duplicate song entries inside a specific playlist"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Miscellaneous">
+
+        <Preference
+            android:key="removeAds"
+            android:title="Remove Ads"
+            android:summary="Disable advertisements and support the developer for a cleaner music experience"
+            android:defaultValue="Default value" />
+
+        <Preference
+            android:key="licences"
+            android:title="Software Licences"
+            android:summary="Open Source Licences that helped advance the usability and development of this application"
+            android:defaultValue="Default value" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

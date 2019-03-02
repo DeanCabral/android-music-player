@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/renameDiaTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rename"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/renameSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:text="Song Title"
+        android:textSize="16sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/renameDiaTitle"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/renameSongTitleInput"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:maxLength="100"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:layout_below="@+id/renameSongTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="false">
+
+        <requestFocus />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/vSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Artist"
+        android:textSize="16sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/renameSongTitleInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:id="@+id/renameSongArtistInput"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:maxLength="100"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:layout_below="@+id/vSongTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/vSongAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Song Album"
+        android:textSize="16sp"
+        android:textColor="@color/colorGrey"
+        android:layout_below="@+id/renameSongArtistInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:id="@+id/renameSongAlbumInput"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:maxLength="100"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:layout_below="@+id/vSongAlbum"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+    </EditText>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RENAME"
+        android:id="@+id/btnRenameSong"
+        android:layout_below="@+id/renameSongAlbumInput"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/renameSongArtistInput"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:id="@+id/btnCancelSongRename"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:layout_alignBottom="@+id/btnRenameSong"
+        android:layout_toStartOf="@+id/btnRenameSong" />
+
+</RelativeLayout>

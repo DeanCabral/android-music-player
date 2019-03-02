@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/searchRecyclerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginRight="-6dp"
+        android:layout_marginTop="10dp"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/lastPlayedRecyclerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Last Played"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lastPlayed_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lastPlayedRecyclerLabel"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="LIMIT BY"
+            android:textColor="#888"
+            android:textSize="13sp"
+            android:onClick="onClickSort"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/lastPlayed_display"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Displaying Result(s)"
+            android:textAlignment="gravity"
+            android:textColor="#888" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:clickable="true" />
+
+</LinearLayout>

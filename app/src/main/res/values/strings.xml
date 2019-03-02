@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cryotech Music</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_artists">ArtistsActivity</string>
+    <string name="title_activity_albums">AlbumsActivity</string>
+    <string name="title_activity_all_songs">AllSongsActivity</string>
+    <string name="title_activity_artist_songs">ArtistSongsActivity</string>
+    <string name="title_activity_parent_songs">ParentSongsActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_equalizer">EqualizerActivity</string>
+    <string name="title_activity_recents">RecentsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_playlist">PlaylistActivity</string>
+    <string name="title_activity_playlist_songs">PlaylistSongsActivity</string>
+</resources>
